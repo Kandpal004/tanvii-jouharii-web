@@ -1,0 +1,140 @@
+.section {
+  background: var(--cream);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 10px 3rem;
+}
+
+.container {
+  text-align: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  font-family: var(--font-sans);
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.9rem;
+  font-size: 0.62rem;
+  font-weight: 400;
+}
+
+.title {
+  font-family: var(--font-serif);
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  margin-bottom: 3rem;
+  font-size: clamp(2rem, 4.2vw, 3rem);
+  font-weight: 800;
+}
+
+.grid {
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.8rem;
+  display: grid;
+}
+
+.tile {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1.8rem 0.8rem;
+  text-decoration: none;
+  transition: border-color 0.35s, background 0.35s, transform 0.35s, box-shadow 0.35s;
+  display: flex;
+}
+
+.tile:hover {
+  border-color: var(--gold);
+  background: var(--surface);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px #1c181414;
+}
+
+.iconWrap {
+  justify-content: center;
+  align-items: center;
+  width: 62px;
+  height: 62px;
+  display: flex;
+  position: relative;
+}
+
+.icon {
+  color: var(--gold-dark);
+  z-index: 1;
+  transition: transform 0.3s, color 0.3s;
+  display: flex;
+  position: relative;
+}
+
+.icon svg {
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+
+.tile:hover .icon {
+  color: var(--royal);
+  transform: scale(1.1);
+}
+
+.iconRing {
+  border: 1px solid var(--border-gold);
+  border-radius: 50%;
+  transition: transform 0.4s, border-color 0.3s;
+  position: absolute;
+  inset: 0;
+}
+
+.tile:hover .iconRing {
+  border-color: var(--gold);
+  transform: scale(1.2);
+}
+
+.label {
+  font-family: var(--font-sans);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  font-size: 0.85rem;
+  font-weight: 700;
+  transition: color 0.3s;
+}
+
+.tile:hover .label {
+  color: var(--text-primary);
+}
+
+.bar {
+  background: var(--gold);
+  width: 0;
+  height: 1px;
+  transition: width 0.4s;
+}
+
+.tile:hover .bar {
+  width: 28px;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 1.2rem;
+  }
+  .title {
+    margin-bottom: 1.5rem;
+  }
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

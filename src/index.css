@@ -1,0 +1,117 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Synced to match LIVE site (tanviijouharii.com) */
+  --ink: #1a1715;
+  --ink-soft: #2a2521;
+  --ink-light: #3a332e;
+
+  --gold: #a8916b;
+  --gold-light: #c7b393;
+  --gold-dark: #877253;
+
+  --ivory: #fff;
+  --ivory-alt: #f4f4f2;
+  --cream: #fff;
+  --cream-alt: #f4f4f2;
+  --surface: #fff;
+  --surface-hover: #f5f5f3;
+
+  --charcoal: #1a1715;
+  --charcoal-mid: #2a2521;
+  --charcoal-light: #3a332e;
+
+  --warm-black: #161311;
+  --warm-dark: #1f1b18;
+  --warm-mid: #2a2521;
+
+  --text-primary: #1a1715;
+  --text-secondary: #6e665e;
+  --text-muted: #6e665e99;
+  --text-inverse: #f5f1ea;
+  --text-inverse-muted: #f5f1ea99;
+  --text-light: #f5f1ea;
+
+  --border: #1a17151f;
+  --border-gold: #a8916b4d;
+
+  --primary: #1a1715;
+  --primary-dark: #000;
+  --primary-text: #fff;
+  --accent: #a8916b;
+  --success: #877253;
+  --sale: #b23a2e;
+
+  --royal: #581c2e;
+  --royal-dark: #3e1120;
+  --gold-royal: #c9a24c;
+
+  /* Display / headings — luxury heritage serif */
+  --font-serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  /* Body / UI — clean, highly readable sans */
+  --font-sans: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  --font-poppins: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--cream);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.7;
+  overflow-x: hidden;
+  cursor: auto;
+}
+
+/* Global heading weights — Cormorant Garamond (luxury serif) */
+h1 { font-family: var(--font-serif); letter-spacing: -0.01em; font-weight: 700; line-height: 1.08; }
+h2 { font-family: var(--font-serif); letter-spacing: -0.01em; font-weight: 700; line-height: 1.12; }
+h3 { font-family: var(--font-serif); letter-spacing: 0; font-weight: 600; line-height: 1.2; }
+h4, h5, h6 { font-family: var(--font-sans); font-weight: 600; }
+
+#root { width: 100%; min-height: 100vh; }
+
+.cursor {
+  position: fixed; top: 0; left: 0;
+  width: 8px; height: 8px;
+  background: var(--gold);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+}
+
+.cursor-follower {
+  position: fixed; top: 0; left: 0;
+  width: 32px; height: 32px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99998;
+  transform: translate(-50%, -50%);
+  opacity: 0.5;
+}
+
+/* Hide the custom cursor on touch devices (no mouse — it gets stuck mid-screen) */
+@media (hover: none), (pointer: coarse) {
+  .cursor, .cursor-follower { display: none !important; }
+}
+
+.gold-line {
+  width: 60px; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin: 0 auto;
+}
+
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: var(--cream-alt); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 2px; }
+
+::selection { background: var(--gold); color: var(--charcoal); }

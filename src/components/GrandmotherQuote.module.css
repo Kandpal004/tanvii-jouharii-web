@@ -1,0 +1,74 @@
+﻿.section {
+  padding: 8rem 3rem;
+  background: linear-gradient(180deg, var(--warm-black) 0%, var(--warm-dark) 50%, var(--warm-black) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 400px;
+  background: radial-gradient(ellipse, rgba(201, 169, 110, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.inner {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.openQuote {
+  font-family: var(--font-poppins);
+  font-size: 6rem;
+  line-height: 0.5;
+  color: var(--gold);
+  opacity: 0.25;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.quote {
+  font-family: var(--font-poppins);
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.6;
+  color: var(--ivory);
+  letter-spacing: 0.02em;
+  margin-bottom: 2.5rem;
+  border: none;
+  quotes: none;
+}
+
+.divider {
+  width: 80px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin: 0 auto 1.5rem;
+}
+
+.attribution {
+  font-family: var(--font-poppins);
+  font-size: 0.9rem;
+  font-weight: 200;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.88);
+  font-style: normal;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 5rem 1.5rem;
+  }
+
+  .quote {
+    font-size: clamp(1.1rem, 4.5vw, 1.5rem);
+  }
+}
